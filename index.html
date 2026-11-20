@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FoodUz — Online buyurtma va delivery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="logo" href="#home">Food<b>Uz</b></a>
+  <nav id="nav"><span class="nav-indicator"></span><a href="#home">Bosh sahifa</a><a href="#menu">Menyu</a><a href="#about">Biz haqimizda</a><a href="#delivery">Yetkazib berish</a><a href="#contact">Aloqa</a></nav>
+  <button class="ib" id="bSearch" title="Qidiruv">🔍</button>
+  <button class="ib" id="bTheme" title="Dark/Light">🌙</button>
+  <button class="ib" id="bCart" title="Savat">🛒<span class="badge" id="cnt">0</span></button>
+  <button class="ib" id="bUser" title="Profil">👤</button>
+  <button class="ib" id="burger">☰</button>
+ </div>
+ <div id="sbar"><div class="wrap"><input id="q" placeholder="Taom qidiring: burger, osh, pizza…"></div></div>
+</header>
+
+<main>
+<div class="hero" id="home"><div class="wrap">
+ <div><h1>Sevimli taomingiz — eshigingizgacha!</h1><p>Mazali taomlar, tezkor yetkazib berish va qulay narxlar — barchasi FoodUz’da.</p>
+ <div class="acts"><button class="btn" id="hOrder">Buyurtma berish →</button><a class="btn ghost" href="#menu">Menyuni ko‘rish</a></div></div>
+ <div class="himg"><img src="images/hero.jpg" alt="Burger" onerror="this.replaceWith('🍔')"></div></div></div>
+
+<section><div class="wrap rev"><h2>Kategoriyalar</h2><p class="sub">Nima yeymiz bugun?</p><div class="cats" id="cats"></div></div></section>
+
+<section id="menu" style="padding-top:0"><div class="wrap rev"><h2>Bizning menyu</h2><p class="sub">Eng sevimli taomlar bir joyda</p>
+ <div class="chips" id="chips"></div><div class="grid" id="grid"></div></div></section>
+
+<section id="delivery"><div class="wrap rev"><h2>Tezkor yetkazib berish</h2><p class="sub">Tez, qulay va ishonchli</p>
+ <div class="feats"><div>🚴 30–60 daqiqada yetkazib berish</div><div>📦 Buyurtmani kuzatish</div><div>💳 Qulay to‘lov</div><div>📍 Manzilingizgacha yetkazib beramiz</div></div>
+ <div class="steps"><div class="step"><b>1</b>Buyurtma berish</div><div class="step"><b>2</b>Taom tayyorlanadi</div><div class="step"><b>3</b>Kuryer olib ketadi</div><div class="step"><b>4</b>Buyurtma yetkaziladi</div></div></div></section>
+
+<section id="about" style="padding-top:0"><div class="wrap about rev">
+ <div><h2>Nega aynan FoodUz?</h2><p class="sub" style="margin:0">FoodUz mijozlarimizga sifatli fast food va milliy taomlarni tez va qulay yetkazib beramiz. Har bir taom yangi mahsulotlardan tayyorlanadi.</p></div>
+ <div class="stats"><div><b>50+</b>Taomlar</div><div><b>10K+</b>Mijozlar</div><div><b>4.9 ⭐</b>Reyting</div><div><b>30 min</b>O‘rtacha delivery</div></div></div></section>
+
+<section style="padding-top:0"><div class="wrap rev"><h2>Mijozlar fikrlari</h2><p class="sub">Bizga ishonganlar nima deydi</p>
+ <div class="rv"><div class="rvt" id="rvt"></div></div><div class="dots" id="dots"></div></div></section>
+</main>
+
+<footer id="contact"><div class="wrap">
+ <div><h3>Food<span style="color:var(--pr2)">Uz</span></h3><p style="opacity:.7">Mazali taomlar — tez yetkazib berish.</p></div>
+ <div><h4>Menyu</h4><a href="#home">Bosh sahifa</a><a href="#menu">Menyu</a><a href="#about">Biz haqimizda</a><a href="#delivery">Yetkazib berish</a></div>
+ <div><h4>Aloqa</h4><a href="tel:+998901234567">📞 +998 90 123 45 67</a><a href="mailto:info@fooduz.uz">✉️ info@fooduz.uz</a><span style="display:block;padding:3px 0">📍 Toshkent sh., Amir Temur ko‘chasi</span><span style="display:block;padding:3px 0">🕒 Har kuni 09:00–23:00</span></div>
+ <div><h4>Ijtimoiy tarmoqlar</h4><a href="#" data-soc>Telegram</a><a href="#" data-soc>Instagram</a><a href="#" data-soc>Facebook</a></div>
+</div><div class="copy">© 2026 FoodUz. Barcha huquqlar himoyalangan.</div></footer>
+
+<div class="drawer" id="drawer"><div class="dh"><h3>Savat</h3><button class="ib" data-close="drawer">✕</button></div><div class="dl" id="cl"></div>
+ <div class="sum" id="cs"></div></div>
+
+<div class="ov" id="mAuth"><div class="modal"><button class="x" data-close="mAuth">✕</button>
+ <div class="tabs"><button class="chip on" data-tab="login">Kirish</button><button class="chip" data-tab="reg">Ro‘yxatdan o‘tish</button></div>
+ <form id="fLogin" novalidate><div class="fld"><label>Telefon yoki email</label><input name="id"><span class="err"></span></div>
+  <div class="fld"><label>Parol</label><input name="pw" type="password"><span class="err"></span></div><button class="btn full">Kirish</button></form>
+ <form id="fReg" novalidate style="display:none"><div class="fld"><label>Ism</label><input name="name"><span class="err"></span></div>
+  <div class="fld"><label>Telefon</label><input name="phone" placeholder="90 123 45 67"><span class="err"></span></div>
+  <div class="fld"><label>Email</label><input name="email" type="email"><span class="err"></span></div>
+  <div class="fld"><label>Parol</label><input name="pw" type="password"><span class="err"></span></div>
+  <div class="fld"><label>Parolni tasdiqlang</label><input name="pw2" type="password"><span class="err"></span></div><button class="btn full">Ro‘yxatdan o‘tish</button></form>
+ <p class="note">Demo: ma’lumotlar faqat shu brauzerning localStorage’ida saqlanadi (haqiqiy backend yo‘q).</p></div></div>
+
+<div class="ov" id="mProf"><div class="modal"><button class="x" data-close="mProf">✕</button><div id="prof"></div></div></div>
+
+<div class="ov" id="mChk"><div class="modal"><button class="x" data-close="mChk">✕</button><h3 style="margin-bottom:14px">Buyurtmani rasmiylashtirish</h3>
+ <form id="fChk" novalidate>
+  <div class="two"><div class="fld"><label>Ism</label><input name="name"><span class="err"></span></div><div class="fld"><label>Telefon</label><input name="phone" placeholder="90 123 45 67"><span class="err"></span></div></div>
+  <div class="two"><div class="fld"><label>Viloyat</label><select name="reg"></select><span class="err"></span></div><div class="fld"><label>Shahar</label><input name="city"><span class="err"></span></div></div>
+  <div class="two"><div class="fld"><label>Manzil</label><input name="addr"><span class="err"></span></div><div class="fld"><label>Uy raqami</label><input name="house"><span class="err"></span></div></div>
+  <div class="fld"><label>Izoh</label><textarea name="note" rows="2"></textarea></div>
+  <b>To‘lov usuli</b>
+  <div class="pay"><label><input type="radio" name="pm" value="cash" checked>💵 Naqd pul</label>
+   <label><input type="radio" name="pm" value="card">💳 Bank kartasi</label>
+   <label><input type="radio" name="pm" value="inst">🗓 Bo‘lib to‘lash (demo)</label></div>
+  <div id="pcash" class="note" style="margin:-6px 0 12px">Yetkazib beruvchi kelganda naqd pul orqali to‘laysiz.</div>
+  <div id="pcard" style="display:none"><div class="fld"><label>Karta raqami</label><input name="cn" inputmode="numeric" placeholder="0000 0000 0000 0000"><span class="err"></span></div>
+   <div class="two"><div class="fld"><label>Amal qilish muddati</label><input name="ce" placeholder="MM/YY"><span class="err"></span></div><div class="fld"><label>CVV</label><input name="cv" type="password" maxlength="3"><span class="err"></span></div></div>
+   <div class="fld"><label>Karta egasi</label><input name="ch"><span class="err"></span></div><p class="note">Demo UI: ma’lumotlar hech qayerga yuborilmaydi va pul yechilmaydi.</p></div>
+  <div id="pinst" style="display:none"><div class="fld"><label>Muddat</label><select name="mo"><option value="3">3 oy</option><option value="6">6 oy</option><option value="12">12 oy</option></select></div>
+   <p class="note" id="instn"></p><p class="note">Demo funksiya: haqiqiy moliyaviy xizmat emas.</p></div>
+  <div class="row" style="margin:12px 0"><b>Jami:</b><b class="price" id="ctot"></b></div>
+  <button class="btn full">Buyurtmani tasdiqlash</button></form></div></div>
+
+<div id="toasts"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
